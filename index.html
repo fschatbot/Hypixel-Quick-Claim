@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hypixel Quick Claim</title>
+		<link rel="stylesheet" href="app.min.css" />
+		<link rel="icon" type="image/png" href="https://rewards.hypixel.net/claim-reward/3j9-Ae1-final.png" sizes="32x32" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Neuton&family=Raleway&display=swap" rel="stylesheet" />
+		<script src="app.js" defer></script>
+		<script src="https://cdn.statically.io/gh/STRML/textFit/master/textFit.min.js"></script>
+		<!-- This script is to be auto fetched and placed down -->
+		<script>
+			window.securityToken = "bMIyrksQ-2IB4Mi5Nl9PIBKqv2LJ38e-gvGs";
+			window.appData =
+				'{"rewards":[{"amount":10000,"rarity":"COMMON","reward":"experience"},{"gameType":"BUILD_BATTLE","amount":3000,"rarity":"COMMON","reward":"coins"},{"amount":100,"rarity":"RARE","reward":"souls"}],"id":"28f9c98a","skippable":true,"dailyStreak":{"value":4,"score":12,"highScore":26,"keeps":false,"token":false},"ad":{"video":"TRsCiBNYY7M","duration":28,"link":"https://store.hypixel.net/?utm_source=rewards-video&utm_medium=website&utm_content=TRsCiBNYY7M&utm_campaign=Rewards","buttonText":"Visit the Store"},"activeAd":0,"playwire":false}';
+			window.appData =
+				'{"rewards":[{"amount":10,"rarity":"COMMON","reward":"dust"},{"amount":10000,"rarity":"COMMON","reward":"experience"},{"gameType":"MURDER_MYSTERY","amount":3000,"rarity":"COMMON","reward":"coins"}],"id":"ed42f5d2","skippable":true,"dailyStreak":{"value":2,"score":11,"highScore":26,"keeps":true,"token":false},"ad":{"video":"yc7xiK4dnII","duration":30,"link":"https://store.hypixel.net/?utm_source=rewards-video&utm_medium=website&utm_content=yc7xiK4dnII&utm_campaign=Rewards","buttonText":"Visit the Store"},"activeAd":1,"playwire":false}';
+			window.i18n = {
+				pageTitle: "Claim your Reward",
+				socialDescription: "Play award winning minecraft games and mini-games with your friends for free. Only on the Hypixel minecraft server!",
+				socialTitle: "Hypixel Reward Card",
+				"error.expired": "This link either never existed or has already expired.",
+				"error.unavailable": "This service is currently not available, please report this to the team.",
+				visitWebsite: "Visit the Hypixel Website",
+				mobileNotSupported: "Tablets and mobile devices are currently not supported. Please visit this website with a desktop browser.",
+				browserOutdated:
+					"Your browser is either outdated or does not support modern web technologies and won't be able to run this website. Please change or upgrade your browser. We do heavily recommend Chrome for the best experience.",
+				getChrome: "Get Chrome",
+				ingameMessage:
+					"§a-----------------------------------------------------\n§fYou have claimed a {$color}§l[{$rarity} {$item}] §freward card!\nCheck back tomorrow to claim your next reward, or use\n§eReward Tokens §fat the Delivery Man to try again!\n§a-----------------------------------------------------",
+				"rarity.common": "Common",
+				"rarity.epic": "Epic",
+				"rarity.rare": "Rare",
+				"rarity.legendary": "Legendary",
+				"tooltip.rarity": "Rarity: ",
+				"rewards.title.uncover": "Hover over a card to uncover",
+				"rewards.title.clickToClaim": "Click to claim 1 of the 3 Rewards",
+				"rewards.title.claimed": "Your reward has been claimed!",
+				"rewards.title.goBack": "Head back to the Hypixel server to enjoy it",
+				dailyStreak: "Daily Streak",
+				"dailyStreak.tooltip": "After claiming each day for 9 days in a row, you receive +1 Reward Token which gives you one more chance to claim a reward",
+				"dailyStreak.tooltip.title": "Daily Streak Reward",
+				currentScore: "Current Score: ",
+				highScore: "High Score: ",
+				"ad.skip": "Skip",
+				"ad.skipMessage": "You can skip this video because of your rank.",
+				"ad.skipMessageUpgrade": "Skip these videos by purchasing a rank on our store.",
+				"ad.timeLeft": "Watch this video for {$seconds}s and claim your reward!",
+				"ad.timeLeftUnknown": "Watch this video and claim your reward!",
+				"type.coins": "{$game} Coins",
+				"type.coins.description": "In-game Coins for {$game}",
+				"type.dust": "Mystery Dust",
+				"type.dust.description": "Used to craft cosmetic items",
+				"type.experience": "Hypixel EXP",
+				"type.experience.description": "Used to increase your Hypixel Level",
+				"type.mystery_box": "Mystery Box",
+				"type.mystery_box.description": "Open to unlock cosmetic items!",
+				"type.souls": "SkyWars Souls",
+				"type.souls.description": "Used with the SkyWars Soul Well",
+				"type.gift_box": "Gift Box",
+				"type.gift_box.description": "Send a Mystery Box to your friends!",
+				"type.housing_package": "Housing Item",
+				"type.housing_package.description": "1 of 6 unique Housing Blocks in this set",
+				"type.adsense_token": "Reward Token",
+				"type.tokens": "{$game} Tokens",
+				"type.tokens.description": "In-game tokens for {$game}",
+				"type.adsense_token.description": "Each token gives you 1 more go at drawing Reward Cards",
+				"vanity.suits.description": "1 of 4 unique cosmetic suit parts",
+				"vanity.emotes.description": "A unique animated Emote item",
+				"vanity.gestures.description": "A unique animated Gesture item",
+				"vanity.suit_treasure": "Treasure Hunter Suit",
+				"vanity.armor.helmet": "Helmet",
+				"vanity.armor.leggings": "Leggings",
+				"vanity.armor.boots": "Boots",
+				"vanity.armor.chestplate": "Chestplate",
+				"vanity.emote_moustache": "Moustache Emote",
+				"vanity.taunt_treasure": "Dig for Treasure Gesture",
+				"housing.red_treasure_chest": "Housing Block",
+				"housing.blue_treasure_chest": "Housing Block",
+				"housing.green_treasure_chest": "Housing Block",
+				"housing.skull.red_treasure_chest": "Red Treasure Chest",
+				"housing.skull.blue_treasure_chest": "Blue Treasure Chest",
+				"housing.skull.green_treasure_chest": "Green Treasure Chest",
+				"housing.skull.gold_nugget": "Gold Nugget",
+				"housing.skull.pot_o'_gold": "Pot O' Gold",
+				"housing.skull.rubik's_cube": "Rubik's Cube",
+				"housing.skull.piggy_bank": "Piggy Bank",
+				"housing.skull.health_potion": "Health Potion",
+				"housing.skull.coin_bag": "Coin Bag",
+				"housing.skull.ornamental_helmet": "Ornamental Helmet",
+				"housing.skull.pocket_galaxy": "Pocket Galaxy",
+				"housing.skull.mystic_pearl": "Mystic Pearl",
+				"housing.skull.agility_potion": "Agility Potion",
+				"housing.skull.golden_chalice": "Golden Chalice",
+				"housing.skull.jewelery_box": "Jewelery Box",
+				"housing.skull.crown": "Crown",
+				"housing.skull.molten_core": "Molten Core",
+				"housing.skull.mana_potion": "Mana Potion",
+				help: "Help",
+				close: "Close",
+				adblocker: "We have detected that you are using an Ad Blocker. To claim your reward, you must disable Ad Blocking on this website.",
+				"help.text":
+					"<h1>HOW IT WORKS</h1>\n\nEach time you claim, 3 cards are drawn at random from our deck. Rewards include minigame coins, Hypixel Experience, Mystery Box items and more! You can left-click to claim 1 of these 3 rewards to receive in-game. Hover over a revealed card to find out more about it.\n\nReward Cards can be Common, Rare, Epic or Legendary rarity level. Common is the least valuable, and Legendary is the most valuable and most difficult to find.\n\nBy default you can claim 1 time per day - the timer resets each day at midnight EST (04:00AM UTC).\n\n<h1>REWARD TOKENS</h1>\n\nYou can use Reward Tokens to claim more rewards - 1 token can be spent at the Delivery Man to let you claim 1 extra time. Reward Tokens can currently be found in cards, and we may add more ways to unlock them across the server.\n\n<h1>DAILY STREAK</h1>\n\nIncluded in the system is a Daily Streak counter. For each day you claim in a row, you build up your streak which is displayed on the Rewards web page. After claiming each day for 9 days in a row, you get 1 free Reward Token, which lets you claim 1 extra time!\n\n<h1>SHARING ON SOCIAL MEDIA</h1>\n\nAfter claiming a card you can share it on Twitter or Facebook by clicking the icons. You can also download the card image for uploading on other websites, or sharing right here on the forums!",
+			};
+		</script>
+	</head>
+	<body>
+		<nav>
+			<a class="hypixelLogo" href="https://hypixel.net/"></a>
+			<a class="bg-yellow-700/20 px-4 md:px-8 py-3 text-yellow-500 text-base md:text-xl"> Made by <span class="name">FSChatBot</span> </a>
+		</nav>
+		<div class="body" id="input">
+			<h1 class="text-5xl text-yellow-500">Enter your Hypixel Daily awards claim id</h1>
+			<div class="inputBox flex items-center">
+				<!-- Giving the border is remaining -->
+				<input type="text" placeholder="Ex: 28f9c98a" />
+				<button>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="body" id="loading">
+			<!-- TODO: Replace with chest icon -->
+			<img src="./assets/_icons/blue_treasure_chest.png" alt="chest" />
+		</div>
+		<div class="body" id="claiming">
+			<h1>Click To Claim 1 Award</h1>
+			<div class="cards"></div>
+			<div class="streak">
+				<h1>Daily Streak (Curr: 11) (High: 26)</h1>
+				<div class="progress">
+					<div class="progress-bar" style="width: 11.111%">1/9</div>
+				</div>
+			</div>
+		</div>
+		<footer>Click <a class="underline text-[#563f12]">here</a> to install a redirection script (Requries Tampermonkey)</footer>
+
+		<label hidden>https://hypixel.net/claim-reward/28f9c98a</label>
+	</body>
+</html>
