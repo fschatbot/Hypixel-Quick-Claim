@@ -1,4 +1,5 @@
 # Get all the assets from the website
+# This is the generator for the "assets/" folder
 import requests
 from pathlib import Path
 

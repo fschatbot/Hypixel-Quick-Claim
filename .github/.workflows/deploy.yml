@@ -1,0 +1,30 @@
+name: Deploy Site on netlify
+
+on:
+  push:
+    branch: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.10.2"
+      - name: Create local changes
+        run: |
+          npm clean-install --no-audit --no-fund
+          CI='' npm run build
+          pip install -r requirements.txt -q
+          python downloader.py
+      - name: Deploy
+        run: |
+          npx netlify deploy --prod
