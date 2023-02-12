@@ -3,7 +3,7 @@ data.ts
 node_modules
 
 app.min.css
-assets/rawMapping.txt
-assets/screenshot*.png
+assets/
+
 # Local Netlify folder
 .netlify
