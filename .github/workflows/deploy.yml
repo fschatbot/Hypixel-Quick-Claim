@@ -27,6 +27,11 @@ jobs:
           pip install -r requirements.txt -q
           python downloader.py
       - name: Deploy
-        run: |
-          npx netlify link --id ${{ secrets.NETLIFY_SITE_ID }} --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}"
-          npx netlify deploy --prod --message="${{ github.event.head_commit.message }} (${{ github.event.head_commit.id }}) [Auto Deploy]" --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}"
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          deploy-message: "${{ github.event.head_commit.message }} (${{ github.event.head_commit.id }}) [Auto Deploy]"
+          fails-without-credentials: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
