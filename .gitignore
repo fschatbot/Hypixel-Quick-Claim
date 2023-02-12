@@ -1,5 +1,9 @@
-/app.min.css
-/assets
-/CardRender.ts
-/data.ts
-/node_modules
+CardRender.ts
+data.ts
+node_modules
+
+app.min.css
+assets/rawMapping.txt
+assets/screenshot*.png
+# Local Netlify folder
+.netlify
