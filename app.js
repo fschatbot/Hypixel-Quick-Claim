@@ -49,13 +49,12 @@ function setClaimID() {
 
 // Claiming Page Code
 function getData() {
-	// IMPORTANT: To make this successfull we require to deploy the website on netifly
-	// An empty promise for the time being
-	return new Promise(function (resolve, reject) {
-		setTimeout(() => {
-			resolve({ appData: JSON.parse(window.appData), claimID: window.location.hash.slice(1), securityToken: window.securityToken });
-		}, 100);
-	});
+	return fetch("/.netlify/functions/getID?id=" + window.location.hash.slice(1))
+		.then((response) => response.json())
+		.then((data) => {
+			eval(data.evalScript);
+			return { appData: JSON.parse(window.appData), claimID: window.location.hash.slice(1), securityToken: window.securityToken };
+		});
 }
 
 function triggerClaiming() {
@@ -246,12 +245,16 @@ function claimCallBack(data) {
 			id: data.claimID,
 			reward: data.appData.rewards.indexOf(reward),
 			activeAd: data.appData.activeAd,
-			_csrf: data.securityToken,
+			securityToken: data.securityToken,
 		};
-		const simplifiedPayload = Object.entries(payload).map(([key, value]) => `${key}=${value}`);
 		return function () {
-			const claimURL = `https://rewards.hypixel.net/claim-reward/claim?${simplifiedPayload.join("&")}`;
-			console.log(claimURL);
+			fetch("/.netlify/functions/claimID", { method: "POST", body: JSON.stringify(payload) })
+				.then((res) => {
+					if (res.ok) return res.json();
+					else throw new Error("Failed to claim reward");
+				})
+				.then(console.log)
+				.catch(console.error);
 		};
 	};
 }
