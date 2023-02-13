@@ -1,23 +1,23 @@
 // Run the shell command python build.py
 
-var exec = require("child_process").exec;
+var { exec } = require("child_process");
 var fs = require("fs");
 var path = require("path");
 
-var child = exec("python build.py", function (error, stdout, stderr) {
+// Download the assets
+exec("node downloader dist", (err, stdout, stderr) => {
 	console.log(stdout);
-	if (error !== null) console.error("exec error: " + error);
+	if (err) console.error(err);
 });
 
-// Copy the following files into the "dist" folder:
-
+// Copy the following files into the "dist" folder
 const outputFiles = ["index.html", "app.js"];
-
-// Create the "dist" folder if it doesn't exist
 if (!fs.existsSync("dist")) fs.mkdirSync("dist");
+outputFiles.forEach((file) => fs.copyFileSync(file, path.join("dist", file)));
+console.log("Copied files to dist folder");
 
-outputFiles.forEach((file) => {
-	fs.copyFileSync(file, path.join("dist", file));
+// Build the CSS File
+exec("npx tailwindcss -i app.css -o dist/app.min.css -m", (err, stdout, stderr) => {
+	console.log(stdout);
+	if (err) console.error(err);
 });
-
-exec("npx tailwindcss -i app.css -o dist/app.min.css -m");
