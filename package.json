@@ -5,6 +5,6 @@
 	},
 	"scripts": {
 		"build:css": "npx tailwindcss -i app.css -o app.min.css -m",
-		"build": "node build.js"
+		"build": "node downloader dist && npx tailwind -i app.css -o dist/app.min.css -m && xcopy index.html dist /Y && xcopy app.js dist /Y"
 	}
 }

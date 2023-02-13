@@ -1,9 +1,5 @@
 name: Deploy Site on netlify
 
-on:
-  push:
-    branch: [master]
-
 jobs:
   build:
     runs-on: windows-latest
