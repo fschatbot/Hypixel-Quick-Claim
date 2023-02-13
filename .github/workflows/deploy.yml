@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
@@ -23,13 +23,19 @@ jobs:
       - name: Create local changes
         run: |
           npm install --no-audit --no-fund
-          CI='' npm run build
-          pip install -r requirements.txt -q
-          python downloader.py
+          npx tailwind -i app.css -o dist/app.min.css -m
+          xcopy index.html dist
+          xcopy app.js dist
+
+          pip install -r requirements.txt
+          python downloader.py dist
+
+          cd netlify/functions
+          npm install node-fetch@3 jsdom -D --no-audit --no-fund
       - name: Deploy
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: "."
+          publish-dir: "dist"
           deploy-message: "${{ github.event.head_commit.message }} (${{ github.event.head_commit.id }}) [Auto Deploy]"
           production-deploy: true
           fails-without-credentials: true

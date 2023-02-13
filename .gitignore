@@ -1,9 +1,7 @@
-CardRender.ts
-data.ts
-node_modules
+/node_modules
+/assets
 
 app.min.css
-assets/
 
 # Local Netlify folder
 .netlify
