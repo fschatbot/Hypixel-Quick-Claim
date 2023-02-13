@@ -33,6 +33,7 @@ jobs:
           deploy-message: "${{ github.event.head_commit.message }} (${{ github.event.head_commit.id }}) [Auto Deploy]"
           production-deploy: true
           fails-without-credentials: true
+          functions-dir: "netlify/functions"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
