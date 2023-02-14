@@ -7,12 +7,13 @@
 // @match        https://rewards.hypixel.net/claim-reward/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=hypixel.net
 // @run-at       document-start
+// @downloadURL  https://cdn.jsdelivr.net/gh/fschatbot/Hypixel-Quick-Claim/tampermonkey.js
 // @grant        none
 // ==/UserScript==
 
 (function () {
 	"use strict";
 	// Simply redirect to the new site
-	let claimID = window.location.pathname.replace("claim-reward", "").replace("/", "");
-	window.location.href = `https://fschatbot.github.io/hypixel-quick-claim#${claimID}`;
+	let claimID = window.location.pathname.split("/")[2];
+	window.location.href = `https://hypixelquickclaim.netlify.app/#${claimID}`;
 })();
