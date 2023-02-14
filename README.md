@@ -37,3 +37,4 @@ Prob with curr meth:
 - [ ] Find the full "data" variable as something is still missing!!
 - [ ] Make a better build system (deploy the important things in the "dist" folder)
 - [ ] Convert the entire python code into a Node JS code
+- [ ] Fix the claiming not working
